@@ -1,8 +1,6 @@
-# Apester Home Assignment
+# GETTING STARTED 🚀
 
-## GETTING STARTED 🚀
-
-### Run application (mongodb + ad service)
+## Run application (mongodb + ad service)
 
 ```bash
  docker-compose up --build
