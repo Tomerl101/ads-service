@@ -1,0 +1,15 @@
+{
+  "id": "coolAd1",
+  "description": "coolAds1Description",
+  "imageUrl": "blabla",
+  "targeting": {
+    "location": {
+      "lat": 44.498,
+      "long": 73.929,
+      "radius": 100
+    },
+    "operatingSystems": ["windows", "macos", "linux"],
+    "browsers": ["chrome", "firefox"],
+    "tags": ["travel", "asia", "israel"]
+  }
+}

@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+
+  server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: adServer
+    ports:
+      - "5000:5000"
+      - "9229:9229"
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: "unless-stopped"
+    depends_on:
+      - mongodb_container
+    networks:
+      - app-network
+
+  mongodb_container:
+    image: mongo:latest
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    ports:
+      - 27017:27017
+    networks:
+      - app-network
+
+  # rabbitmq:
+  #   image: rabbitmq:3.7.4
+  #   networks:
+  #     - app-network
+
+volumes:
+  mongodb_data_container: {}
+
+networks:
+  app-network: {}
